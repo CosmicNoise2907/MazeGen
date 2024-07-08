@@ -858,8 +858,8 @@ class Cell {
     ctx.fillRect(
       x,
       y,
-      this.parentSize / columns ,
-      this.parentSize / columns 
+      this.parentSize / columns - 3 ,
+      this.parentSize / columns - 3
         );
   }
   highlight(columns) {
@@ -901,8 +901,8 @@ class Cell {
     ctx.fillRect(
       x,
       y,
-      this.parentSize / columns - 1,
-      this.parentSize / columns - 1
+      this.parentSize / columns-3 ,
+      this.parentSize / columns -3
     );
   }
 
@@ -954,11 +954,11 @@ class Cell {
     ctx.lineWidth = 0;
    
     if (this.visited) {
-      ctx.fillRect(x , y, 1 , 1);
+      ctx.fillRect(x+1 , y+1, size/columns-2 , size/rows-2);
     }
     if (this.goal) {
       ctx.fillStyle = "rgb(83, 247, 43)";
-      ctx.fillRect(x, y, size / columns, size / rows );
+      ctx.fillRect(x + 1 , y+1 , size / columns-2, size / rows-2 );
     }
   }
   checkNeighboursAldusBroder() {
